@@ -1,0 +1,83 @@
+ion-segment {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 3.2rem !important;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #488aff;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #488aff;
+    border-radius: 4px 4px 4px 4px !important;
+}
+
+.segment-button {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.segment-activated {
+    background-color: #488aff !important;
+    color: #fff !important;
+    height: 3.2rem !important;
+    opacity: 1;
+    border-radius: 4px 4px 4px 4px !important;
+}
+
+.text-title {
+    white-space: pre-line;
+    font: bold;
+    font-size: 1.8rem !important;
+    text-decoration: underline;
+    color: black !important;
+}
+.text-description {
+    white-space: pre-line;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: black !important;
+}
+
+.div-likes-answers {
+    float: right;
+    margin-top: 20px;
+}
+
+.text-likes-answers {
+    font-size: 1.2rem  !important;
+    color: black !important;
+}
+
+.button-width{
+    width: 30% !important
+}
+
+.float-right{
+    float: right;
+}
+.width100{
+    width:100%;
+}
+
+.answer-textstyle{
+    float:left; width:48%;
+}
+.answer-textstyle-right{
+    float:right; width:50%;
+}
+
+.textarea-resize {
+    resize:none;
+}
+
+.aglin-right {
+    text-align: right
+}

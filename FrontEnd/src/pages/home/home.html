@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-content  style="background: #e0e0de;height:500px;border: 1px solid #C7C7CC; border-radius: 5px; margin-bottom: 10px;margin-top: 20px;" >
+      <ion-list no-lines >
+        <ion-item style="background: #e0e0de; " *ngFor="let message of chatList; let i = index" >
+          <div  [ngClass]="{'last-msg': i == chatList.length-1}">
+            <div class="msj-rta macro" *ngIf="message.sent">
+              <div class="text text-r">
+                <p>{{ message.text }}</p>
+                <p style="text-align: right;"><small>{{ message.time }}</small></p>
+              </div>
+              <div class="avatar" style="padding:0px 0px 0px 10px !important">
+                
+                <img class="img-circle" style="width:100%;" src="../../assets/icon/Webp.net-resizeimage.png">
+              </div>
+            </div>
+            <div class="msj macro" *ngIf="!message.sent">
+              <div class="avatar">
+                <img class="img-circle" style="width:100%;" src="../../assets/icon/Webp.net-resizeimage.png">
+              </div>
+              <div class="text text-l">
+                <p>{{ message.text }}</p>
+                <p style="text-align: right;"><small>{{ message.time }}</small></p>
+              </div>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+  <div  *ngIf="isPopulateDataAvaialble">
+    <div *ngIf="prePopulateType == 'button'">
+      <span *ngFor="let item of prePopulateArray">
+        <button class="selection-button" (click)="onSelection($event, item)">{{item.text}}</button>
+      </span>
+    </div>
+    <div *ngIf="prePopulateType == 'checkBoxList'">
+        <ion-list no-lines >
+          <ion-item *ngFor="let item of prePopulateArray; let indx = index;">
+            <label><input type="checkbox" (change)="onCheckBoxSelection($event, item, indx)" />{{item.text}}</label>
+          </ion-item>
+        </ion-list>
+    </div>
+  </div>
+  <label>
+    <input class="input-text" type="text"  placeholder="Type your message" (keydown)="addText($event)" [(ngModel)]="freeText" />
+  </label>
+  <button class="send-button" (click)="addTextButton()">
+    Send
+  </button>
+</ion-content>

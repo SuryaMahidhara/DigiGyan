@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="header">
+      DigiGyan App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list >
+    <ion-item no-lines >
+      <ion-label>Login</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="userName" placeholder="Username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="password" placeholder="Password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="button-width">
+    <button ion-button color="primary" (click)="loginUser()"  block>Submit</button>
+    <p><a (click)="registerUser()">Register User</a></p>
+  </div>
+</ion-content>

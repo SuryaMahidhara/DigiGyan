@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      DigiGyan App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list >
+    <ion-item no-lines >
+      <ion-label>Register</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="userName" placeholder="Username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-item no-lines >
+      <ion-label>Tags</ion-label>
+    </ion-item>
+    <ion-item no-lines *ngFor="let item of tags; let indx = index;">
+      <ion-label>{{item.tag}}</ion-label>
+      <ion-checkbox (click)="selectedChecked(indx)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <div class="button-width">
+    <button ion-button color="primary" (click)="registerUser()"  block>Submit</button>
+  </div>
+</ion-content>
